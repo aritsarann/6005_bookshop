@@ -251,8 +251,13 @@ def query_top_users_by_order_count():
 st.title('Bookshop Omakase - Data Analysis')
 
 # Create a 1x1 layout for each chart
+col1, col2 = st.columns(2)
+with col1:
+    query_top_users_by_order_count()
 
-query_top_users_by_order_count()
+with col2:
+    query_user_count_by_gender_region2()
+
 col1, col2 = st.columns(2)
 with col1:
     query_orders_by_shipping()
@@ -260,7 +265,7 @@ with col1:
 with col2:
     query_total_revenue_by_genre()
 
-query_user_count_by_gender_region2()
+
 query_top_pages()
 query_avg_quantity()
 
