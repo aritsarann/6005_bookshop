@@ -260,7 +260,11 @@ with col1:
 with col2:
     query_total_revenue_by_genre()
 
-query_avg_quantity()
+col1, col2 = st.columns(2)
+with col1:
+    query_avg_quantity()
+
+with col2:
+    query_user_count_by_gender_region2()
 query_top_pages()
-query_user_count_by_gender_region2()
 
