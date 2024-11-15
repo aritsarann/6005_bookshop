@@ -254,17 +254,14 @@ col1, col2 = st.columns(2)
 
 with col1:
     query_avg_quantity()
+    query_orders_by_shipping()
 
 with col2:
     query_top_pages()
+    query_total_revenue_by_genre()
 
-
-# Query and display charts in the second column
+# Display user count by gender and region chart
 query_user_count_by_gender_region2()
 
-query_total_revenue_by_genre()
-
-# Additional chart for Top 10 Users by Order Count
+# Additional chart for Top 5 Users by Order Count
 query_top_users_by_order_count()
-
-query_orders_by_shipping()
