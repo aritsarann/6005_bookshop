@@ -24,7 +24,7 @@ def query_avg_quantity():
     statuses = [row[0] for row in tables]
     avg_quantities = [row[1] for row in tables]
     
-    fig = plt.figure(figsize=(10, 6))
+    fig = plt.figure(figsize=(6, 6))
     
     plt.pie(avg_quantities, labels=statuses, autopct='%1.1f%%', startangle=140, colors=plt.cm.Paired.colors)
     plt.title('Average Quantity by Order Status', fontsize=14)
