@@ -24,7 +24,8 @@ def query_avg_quantity():
     statuses = [row[0] for row in tables]
     avg_quantities = [row[1] for row in tables]
     
-    fig = plt.figure(figsize=(8, 8))
+    fig = plt.figure(figsize=(None, 6))
+    
     plt.pie(avg_quantities, labels=statuses, autopct='%1.1f%%', startangle=140, colors=plt.cm.Paired.colors)
     plt.title('Average Quantity by Order Status', fontsize=14)
     st.pyplot(fig)
@@ -51,7 +52,8 @@ def query_orders_by_shipping():
     colors = ['skyblue' if shipping == 'Standard' else 'salmon' for shipping in shipping_methods]
 
     # สร้างกราฟหลายๆ กราฟ
-    fig, ax = plt.subplots(1, 3, figsize=(18, 6))
+    
+    fig, ax = plt.subplots(1, 3, figsize=(None, 6))
 
     # กราฟแสดงจำนวนคำสั่งซื้อ
     ax[0].bar(shipping_methods, total_orders, color=colors)
@@ -109,14 +111,13 @@ def query_top_pages():
         labels={'x': 'View Counts', 'y': 'Page IDs'},
         color_discrete_sequence=['#483D8B'] * len(view_counts)  # สี Light Sea Green
     )
-
-    # ปรับแต่ง layout
     fig.update_layout(
         xaxis_title="View Counts",
         yaxis_title="Page IDs",
-        yaxis=dict(categoryorder='total ascending'),  # เรียงจากค่ามากไปน้อย
+        yaxis=dict(categoryorder='total ascending'),
         title_font_size=16
     )
+
 
     # แสดงกราฟใน Streamlit
     st.plotly_chart(fig)
@@ -157,7 +158,7 @@ def query_user_count_by_gender_region2():
         'OTHER': '#BA55D3'    # Medium Orchid
     }
     
-    fig, ax = plt.subplots(figsize=(10, 6))
+    fig, ax = plt.subplots(figsize=(None, 6))
     for i, gender in enumerate(gender_labels):
         ax.bar(
             [x + (i - 1) * bar_width for x in ind],  # ปรับตำแหน่งบาร์
@@ -201,7 +202,7 @@ def query_total_revenue_by_genre():
     # Create a color list where the max value gets 'orangered' and others get 'skyblue'
     colors = ['orangered' if revenue == max_revenue else 'skyblue' for revenue in revenues]
 
-    fig = plt.figure(figsize=(10, 6))
+    fig = plt.figure(figsize=(None, 6))
     plt.bar(genres, revenues, color=colors)
     plt.title('Total Revenue by Genre', fontsize=14)
     plt.xlabel('Genre', fontsize=12)
@@ -244,7 +245,7 @@ def query_top_users_by_order_count():
         color=colors,  # Use custom colors
         color_discrete_map={'orangered': 'orangered', 'skyblue': 'skyblue'},  # Map colors to specific values
     )
-    st.plotly_chart(fig)
+    st.plotly_chart(fig, use_container_width=True)
 
 # Set up Streamlit layout with 1 row per graph
 st.title('Bookshop Omakase - Data Analysis')
