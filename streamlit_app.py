@@ -24,7 +24,7 @@ def query_avg_quantity():
     statuses = [row[0] for row in tables]
     avg_quantities = [row[1] for row in tables]
     
-    fig = plt.figure(figsize=(None, 6))
+    fig = plt.figure(figsize=(10, 6))
     
     plt.pie(avg_quantities, labels=statuses, autopct='%1.1f%%', startangle=140, colors=plt.cm.Paired.colors)
     plt.title('Average Quantity by Order Status', fontsize=14)
@@ -53,7 +53,7 @@ def query_orders_by_shipping():
 
     # สร้างกราฟหลายๆ กราฟ
     
-    fig, ax = plt.subplots(1, 3, figsize=(None, 6))
+    fig, ax = plt.subplots(1, 3, figsize=(10, 6))
 
     # กราฟแสดงจำนวนคำสั่งซื้อ
     ax[0].bar(shipping_methods, total_orders, color=colors)
@@ -158,7 +158,7 @@ def query_user_count_by_gender_region2():
         'OTHER': '#BA55D3'    # Medium Orchid
     }
     
-    fig, ax = plt.subplots(figsize=(None, 6))
+    fig, ax = plt.subplots(figsize=(10, 6))
     for i, gender in enumerate(gender_labels):
         ax.bar(
             [x + (i - 1) * bar_width for x in ind],  # ปรับตำแหน่งบาร์
@@ -202,7 +202,7 @@ def query_total_revenue_by_genre():
     # Create a color list where the max value gets 'orangered' and others get 'skyblue'
     colors = ['orangered' if revenue == max_revenue else 'skyblue' for revenue in revenues]
 
-    fig = plt.figure(figsize=(None, 6))
+    fig = plt.figure(figsize=(10, 6))
     plt.bar(genres, revenues, color=colors)
     plt.title('Total Revenue by Genre', fontsize=14)
     plt.xlabel('Genre', fontsize=12)
