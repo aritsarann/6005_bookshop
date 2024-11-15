@@ -262,9 +262,11 @@ with col2:
 
 col1, col2 = st.columns(2)
 with col1:
-    query_avg_quantity()
+    query_top_pages()
+    
 
 with col2:
     query_user_count_by_gender_region2()
-query_top_pages()
+    
+query_avg_quantity()
 
