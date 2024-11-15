@@ -252,10 +252,12 @@ st.title('Bookshop Omakase - Data Analysis')
 # Create a 1x1 layout for each chart
 col1, col2 = st.columns(2)
 
-# Query and display charts in the first column
-query_avg_quantity()
+with col1:
+    query_avg_quantity()
 
-query_top_pages()
+with col2:
+    query_top_pages()
+
 
 # Query and display charts in the second column
 query_user_count_by_gender_region2()
