@@ -1,1 +1,6 @@
 streamlit
+matplotlib
+streamlit
+pandas
+pinotdb
+plotly
