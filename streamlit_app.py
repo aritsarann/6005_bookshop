@@ -107,7 +107,7 @@ def query_top_pages():
         x=view_counts,
         y=page_ids,
         orientation='h',
-        title='Top 10 Most Viewed Pages (Horizontal Bar Chart)',
+        title='Top 10 Most Viewed Pages',
         labels={'x': 'View Counts', 'y': 'Page IDs'},
         color_discrete_sequence=['#483D8B'] * len(view_counts)  # สี Light Sea Green
     )
